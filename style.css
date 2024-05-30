@@ -39,25 +39,27 @@ header img{
 }
 
 header{
-    position: fixed;
+    position: sticky;
     top: 0;
     right: 0;
 display: flex;
 align-items: center;
 justify-content: space-around;
-background: transparent;
+background: white;
 padding: 5px;
 width: 100%;
 height: auto;
 border-bottom:  1px solid lightgray;
 transition: all .45s ease;
+z-index: 10;
+
 
 }
 
-header.sticky{
-    background: white;
+/* header.sticky{
+;
     
-}
+} */
 
 
 .del-img{
@@ -102,6 +104,9 @@ header.sticky{
     margin-left: -50px;
     
 }
+#menu-icon{
+    display: ;
+}
 
 
 
@@ -136,20 +141,21 @@ section{
 }
 
 .home{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-image: url(./images/background.avif);
     background-size: cover;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     transition: all .45s ease;
 }
 
 .home-img img{
-    width: 800px;
+    max-width: 100%;
     height: auto;
-    margin-top: -100px;
+    
 }
 
 /* .home-text{
@@ -207,22 +213,24 @@ span{
 
 .feature{
     padding: 50px 50px;
+    max-width: 100%;
+
 }
 
 .feature-container{
     display: flex;
+    flex-wrap: wrap;
+    min-width: 100%;
+    min-height: 100%;
     align-items: center;
-    justify-content: space-around;
-    
-    
-    
+    justify-content: space-around;   
 }
 
 .feature-row{
     background: #e3ffe6;
     padding: 10px 25px;
     border-radius: 10px;
-    margin-left: 20px;
+    margin-bottom: 10px;
     transition: all .45s ease;
 }
 
@@ -276,6 +284,7 @@ span{
 }
 .product-content{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     transition: all .45s ease;
@@ -284,6 +293,7 @@ span{
 .product-display{
     background: whitesmoke;
     border-radius: 10px;
+    margin-bottom: 10px;
     padding: 20px 30px;
     position: relative;
     transition: all .45s ease;
@@ -344,6 +354,8 @@ span{
 .price a:hover{
     letter-spacing: 1px;
     transition: all .45s ease;
+    color: white;
+    background: red;
 }
 
 
@@ -358,8 +370,8 @@ span{
 .cta{
     background-image: url(./images/background.avif);
     background-size: cover;
-    height: 70vh;
-    width: 100%;
+    min-height: 70vh;
+    min-width: 100%;
     padding: 10px 30px;
     border-radius: 10px;
     transition: all .45s ease;
@@ -371,20 +383,17 @@ span{
     justify-content: space-around;
 }
 
-.cta-img{
-    margin-top: 100px;
-    width: 500px;
+.cta-text img{
+    margin-top: 10px;
+    max-width: 100%;
     height: auto;
 }
 
-.cta-content img{
-    width: 400px;
-    height: auto;
-}
+
 
 .cta h3{
     margin-bottom: 50px;
-    font-size: 35px;
+    font-size: 20px;
 }
 .cta p{
     margin-bottom: 50px;
@@ -407,22 +416,23 @@ span{
 }
 .footer-feature{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     transition: all .45s ease;
 }
 .footer-feature li{
     margin-bottom: 10px;
-}
-.footer-feature li {
-    
-    font-weight: 300;
     transition: all .45s ease;
-    
 }
+
 .footer-feature li:hover{
     transform: translateX(-5px);
     transition: all .45s ease;
+}
+
+.footer-text{
+    margin-bottom: 10px;
 }
 .footer-text h3{
     margin-bottom: 20px;
@@ -432,7 +442,67 @@ span{
 .bottom{
     text-align: center;
     font-weight:300 ;
+    margin-bottom: 20px;
 }
 
 
+@media (min-width:1200px){
+    .home{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        max-height: 100vh;
+        overflow: hidden;
+        object-fit: cover;
+    }
 
+    .home-img{
+        max-width: 100%;
+        margin-top: -300px;
+        object-fit: cover;
+    }
+
+    .cta{
+        display: flex;
+        align-items: center;
+        min-height: 70vh;
+
+    }
+
+    .feature{
+        padding: 10px;
+    }
+
+    .cta-text img{
+        max-width: 300px;
+    }
+}
+
+
+@media (max-width:1200px){
+    .home{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        max-height: 100vh;
+        object-fit: cover;
+        overflow: hidden;
+    }
+
+    .home-img{
+        max-width: 100%;
+        margin-top: -250px;
+    }
+
+    .feature-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    
+    }
+
+    .cta-text img{
+        width:300px ;
+    }
+}
