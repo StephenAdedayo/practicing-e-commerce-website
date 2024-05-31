@@ -3,10 +3,10 @@ let navbar = document.querySelector('.navbar');
 
 menu.onclick = () => {
     menu.classList.toggle('ri-menu-line');
-    navbar.classList.toggle(open);
+    navbar.classList.toggle('open');
 };
 
 window.onscroll = () => {
     menu.classList.remove('ri-menu-line');
-    navbar.classList.remove(open);
-};
+    navbar.classList.remove('open');
+}
